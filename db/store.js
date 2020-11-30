@@ -48,6 +48,7 @@ class Store {
   // 7. RETURN THE NEW NOTE TO THE CALLER
 
   addNote(note) {
+    console.log(note);
     const { title, text } = note;
 
     if (!title || !text) {
@@ -55,7 +56,7 @@ class Store {
     }
 
     // Add a unique id to the note using uuid package
-    const newNote = { title, text, id: uuidv1() };
+    const newNote = { title, text, id: 1 };
 
     // Get all notes, add the new note, write all the updated notes, return the newNote
     return this.getNotes()

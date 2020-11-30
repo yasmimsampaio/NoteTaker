@@ -12,9 +12,9 @@ router.get("/notes", (req, res) => {
 // POST "/api/notes" 
 // Use addNote in the store object
 // YOUR CODE HERE
-router.post("/api/notes", (req, res) => {
+router.post("/notes", (req, res) => {
   store
-    .addNotes()
+    .addNote(req.body)
     .then((notes) => res.json(notes))
     .catch((err) => res.status(500).json(err));
 });
@@ -22,7 +22,7 @@ router.post("/api/notes", (req, res) => {
 // DELETE "/api/notes" deletes the note with an id equal to req.params.id
 // Use removeNote method in the store object
 // YOUR CODE HERE
-router.delete("/api/notes/:id", (req, res) => {
+router.delete("/notes/:id", (req, res) => {
   store
     .removeNotes(req.params.id)
     .then((notes) => res.json(notes))
