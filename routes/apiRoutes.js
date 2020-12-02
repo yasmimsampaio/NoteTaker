@@ -24,8 +24,8 @@ router.post("/notes", (req, res) => {
 // YOUR CODE HERE
 router.delete("/notes/:id", (req, res) => {
   store
-    .removeNotes(req.params.id)
-    .then((notes) => res.json(notes))
+    .removeNote(req.params.id)
+    .then(() => res.json({ ok: true }))
     .catch((err) => res.status(500).json(err));
 });
 
